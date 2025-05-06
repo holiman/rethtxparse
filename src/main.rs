@@ -1,7 +1,7 @@
 
 use std::io::{self, BufRead};
 use alloy_consensus::{transaction::eip4844, EthereumTxEnvelope, Transaction};
-use alloy_primitives::{Address};
+use alloy_primitives::{ Address};
 use alloy_rlp::Decodable;
 use regex::Regex;
 
@@ -24,7 +24,7 @@ fn main() {
         };
         match parse_sender(&mut &result[..]) {
             Ok(sender )=>{
-                println!("{}", sender);
+                println!("{sender:?}");
             }
             Err(txt) =>{
                 println!("err: {}", txt);
