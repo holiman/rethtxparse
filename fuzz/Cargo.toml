@@ -1,0 +1,24 @@
+[package]
+name = "rethtxparse-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+alloy-consensus = { version = "0.15.7", features = ["k256"] }
+alloy-primitives = "1.1.0"
+alloy-rlp = "0.3.11"
+
+[dependencies.rethtxparse]
+path = ".."
+
+[[bin]]
+name = "fuzz_target_1"
+path = "fuzz_targets/fuzz_target_1.rs"
+test = false
+doc = false
+bench = false

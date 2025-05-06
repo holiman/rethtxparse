@@ -1,0 +1,11 @@
+[package]
+name = "rethtxparse"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+regex = "1.11.1"
+hex = "0.4.3"
+alloy-consensus = { version = "0.15.7", features = ["k256"] }
+alloy-primitives = "1.1.0"
+alloy-rlp = "0.3.11"
