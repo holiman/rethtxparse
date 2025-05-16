@@ -34,6 +34,7 @@ fn main() {
 }
 
 fn parse_sender(data: &mut &[u8]) -> Result<Address, String> {
+    use alloy_consensus::transaction::SignerRecoverable;
     let envelope: EthereumTxEnvelope<eip4844::TxEip4844> = EthereumTxEnvelope::decode(data).map_err(|e| e.to_string())?;
     if let Some(chainid) =  envelope.chain_id() {
         if chainid != 1 {
